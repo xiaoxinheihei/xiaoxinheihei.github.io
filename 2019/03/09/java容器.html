@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      [总结|展望] 世界不会因为你的无知而停下脚步 | 学习使人进步-( ゜- ゜)つロ干杯~
+      Java 容器 | 学习使人进步-( ゜- ゜)つロ干杯~
     
   </title>
   <meta name="author" content="Xin">
@@ -119,7 +119,7 @@
 				<!-- Page title -->
 				<p>
 					
-						当前文章&nbsp;:&nbsp;《[总结|展望] 世界不会因为你的无知而停下脚步》
+						当前文章&nbsp;:&nbsp;《Java 容器》
 					
 				</p>
 				<!-- Progress bar -->
@@ -286,8 +286,8 @@
 	
 	<div class="article-title">
 		
-	<a href="/2018/12/10/123.html" itemprop="url">
-		[总结|展望] 世界不会因为你的无知而停下脚步
+	<a href="/2019/03/09/java容器.html" itemprop="url">
+		Java 容器
 	</a>
 
 	</div>
@@ -296,17 +296,17 @@
 		<span>
 			
 	发布于
-	<a href="/2018/12/10/123.html" itemprop="url">
-		<time datetime="2018-12-10T14:18:05.000Z" itemprop="datePublished">
-	  		2018-12-10
+	<a href="/2019/03/09/java容器.html" itemprop="url">
+		<time datetime="2019-03-09T04:21:08.000Z" itemprop="datePublished">
+	  		2019-03-09
 	  </time>
 	</a> 
 
 	/
 	更新于
-	<a href="/2018/12/10/123.html" itemprop="url">
-		<time datetime="2018-12-10T14:18:05.000Z" itemprop="dateUpdated">
-	  		2019-03-18
+	<a href="/2019/03/09/java容器.html" itemprop="url">
+		<time datetime="2019-03-09T04:21:08.000Z" itemprop="dateUpdated">
+	  		2019-04-09
 	  </time>
 	</a> 	
 
@@ -316,12 +316,8 @@
 			<i class="fa fa-tags"></i>
 			
 	
-		<a href="/tags/大学生活/" class=" ">
-			大学生活
-		</a>
-	
-		<a href="/tags/总结/" class=" ">
-			总结
+		<a href="/tags/java/" class=" ">
+			java
 		</a>
 	
 		
@@ -334,11 +330,35 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<p><strong>Be the greatest, or nothing</strong>。</p>
+		<h1 id="JAVA容器"><a href="#JAVA容器" class="headerlink" title="JAVA容器"></a><strong>JAVA容器</strong></h1><hr>
+<h2 id="一、概览"><a href="#一、概览" class="headerlink" title="一、概览"></a><strong>一、概览</strong></h2><p>容器主要包括 Collection 和 Map 两种，Collection 存储着对象的集合，而 Map 存储着键值对（两个对象）的映射表。</p>
+<h2 id="COLLECTION"><a href="#COLLECTION" class="headerlink" title="COLLECTION"></a>COLLECTION</h2><hr>
+<p><img src="https://i.loli.net/2019/04/09/5cac9d9103af1.png" alt="COLLECTION"></p>
+<h3 id="1-SET"><a href="#1-SET" class="headerlink" title="1. SET"></a>1. SET</h3><ul>
+<li>TreeSet：基于红黑树实现，支持有序性操作，例如根据一个范围查找元素的操作。TreeSet是用来排序的, 可以指定一个顺序, 对象存入之后会按照指定的顺序排列,但是查找效率不如 HashSet，HashSet 查找的时间复杂度为 O(1)，TreeSet 则为 O(logN)；</li>
+<li>HashSet：基于哈希表实现，支持快速查找，但不支持有序性操作。并且失去了元素的插入顺序信息，也就是说使用 Iterator 遍历 HashSet 得到的结果是不确定的；</li>
+<li>LinkedHashSet：具有 HashSet 的查找效率，且内部使用双向链表维护元素的插入顺序。</li>
+</ul>
+<h3 id="2-LIST"><a href="#2-LIST" class="headerlink" title="2. LIST"></a>2. LIST</h3><ul>
+<li>ArrayList：基于动态数组实现，支持随机访问；</li>
+<li>Vector：和 ArrayList 类似，但它是线程安全的;</li>
+<li>LinkedList：基于双向链表实现，只能顺序访问，但是可以快速地在链表中间插入和删除元素。不仅如此，LinkedList 还可以用作栈、队列和双向队列。</li>
+</ul>
+<h3 id="3-QUEUUE"><a href="#3-QUEUUE" class="headerlink" title="3. QUEUUE"></a>3. QUEUUE</h3><ul>
+<li>LinkedList：可以用它来实现双向队列；</li>
+<li>PriorityQueue：基于堆结构实现，可以用它来实现优先队列.</li>
+</ul>
+<h2 id="MAP"><a href="#MAP" class="headerlink" title="MAP"></a>MAP</h2><hr>
+<p><img src="https://i.loli.net/2019/04/09/5cac9d503a255.png" alt="map"></p>
+<ul>
+<li>TreeMap：基于红黑树实现;</li>
+<li>HashMap：jdk1.8之前基于数组和链表实现，jdk1.8之后基于数组和链表，当链表的长度大于8时采用红黑树。</li>
+<li>HashTable：和 HashMap 类似，但它是线程安全的，使用Synchronized关键字来保证线程安全，这意味着同一时刻多个线程可以同时写入 HashTable 并且不会导致数据不一致。它是遗留类，不应该去使用它。现在可以使用ConcurrentHashMap来支持线程，ConcurrentHashMap在jdk1.7使用分段锁机制来实现并发，核心类为Segment,jdk1.8使用了CAS操作来支持更高的并发度，在 CAS 操作失败时使用内置锁 synchronized。</li>
+</ul>
 	
 	</div>
 	
-	<div id="current-post-cover" data-scr="https://i.loli.net/2018/12/10/5c0e74b9d6e0b.jpg"></div>
+	<div id="current-post-cover" data-scr="https://i.loli.net/2019/04/08/5cab4e392162c.jpg"></div>
 
 	<!-- relate post, comment...-->
 	<div class="investment-container">
@@ -352,10 +372,14 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2018/12/25/大数据学习-初识Hadoop.html" title="大数据学习 | 初识 Hadoop" rel="prev">
+			<a href="/2019/03/16/IoC容器浅析及简单实现.html" title rel="prev">
 				&laquo;上一篇
 			</a>
 		
+		
+			<a href="/2019/03/08/java内存区域详解.html" title="java内存区域详解" rel="next">
+				下一篇&raquo;
+			</a>
 			
 	</span>
       		
@@ -368,6 +392,25 @@
 
 <div class="relate-post">
 	<ul>
+		
+				<li>
+					<div>
+						<a href="/2019/03/08/java内存区域详解.html" title="java内存区域详解">
+							java内存区域详解
+						</a>
+						<p>
+							Java 内存区域详解
+JVM 运行时的数据区域
+
+总共也就这么 5 个区（直接内存不属于 JVM 运行时数据区的一部分），除了程序计数器其他的地方都有可能出现 OOM (OutOfMemoryError)，其中像是程序计数器和两个栈...
+						</p>
+					</div>
+
+					<a href="/2019/03/08/java内存区域详解.html" title="java内存区域详解">				
+						<img src="/img/cart_cover2.jpg" class="relateImg" alt="java内存区域详解">
+					</a>
+				</li>											
+		
 		
 				<li>
 					<div>
@@ -395,46 +438,6 @@ Sprin...
 		
 				<li>
 					<div>
-						<a href="/2019/03/09/java容器.html" title="Java 容器">
-							Java 容器
-						</a>
-						<p>
-							JAVA容器
-一、概览容器主要包括 Collection 和 Map 两种，Collection 存储着对象的集合，而 Map 存储着键值对（两个对象）的映射表。
-COLLECTION
-
-1. SET
-TreeSet：基于红黑树实现，...
-						</p>
-					</div>
-
-					<a href="/2019/03/09/java容器.html" title="Java 容器">				
-						<img src="https://i.loli.net/2019/04/08/5cab4e392162c.jpg" class="relateImg" alt="Java 容器">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2019/03/08/java内存区域详解.html" title="java内存区域详解">
-							java内存区域详解
-						</a>
-						<p>
-							Java 内存区域详解
-JVM 运行时的数据区域
-
-总共也就这么 5 个区（直接内存不属于 JVM 运行时数据区的一部分），除了程序计数器其他的地方都有可能出现 OOM (OutOfMemoryError)，其中像是程序计数器和两个栈...
-						</p>
-					</div>
-
-					<a href="/2019/03/08/java内存区域详解.html" title="java内存区域详解">				
-						<img src="/img/cart_cover2.jpg" class="relateImg" alt="java内存区域详解">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
 						<a href="/2018/12/25/大数据学习-初识Hadoop.html" title="大数据学习 | 初识 Hadoop">
 							大数据学习 | 初识 Hadoop
 						</a>
@@ -447,6 +450,23 @@ JVM 运行时的数据区域
 
 					<a href="/2018/12/25/大数据学习-初识Hadoop.html" title="大数据学习 | 初识 Hadoop">				
 						<img src="https://i.loli.net/2018/12/27/5c2478c2654a3.jpg" class="relateImg" alt="大数据学习 | 初识 Hadoop">
+					</a>
+				</li>											
+		
+		
+				<li>
+					<div>
+						<a href="/2018/12/10/123.html" title="[总结|展望] 世界不会因为你的无知而停下脚步">
+							[总结|展望] 世界不会因为你的无知而停下脚步
+						</a>
+						<p>
+							Be the greatest, or nothing。
+
+						</p>
+					</div>
+
+					<a href="/2018/12/10/123.html" title="[总结|展望] 世界不会因为你的无知而停下脚步">				
+						<img src="https://i.loli.net/2018/12/10/5c0e74b9d6e0b.jpg" class="relateImg" alt="[总结|展望] 世界不会因为你的无知而停下脚步">
 					</a>
 				</li>											
 		
@@ -651,6 +671,13 @@ JVM 运行时的数据区域
 		插件作者：KELEN
 		插件来源: https://github.com/KELEN/katelog
 -->
+
+		
+
+		<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
 	
 		</main>
 		

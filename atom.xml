@@ -43,20 +43,20 @@
   </entry>
   
   <entry>
-    <title>java容器</title>
-    <link href="https://xiaoxinheihei.github.io/2019/03/08/java%E5%AE%B9%E5%99%A8.html"/>
-    <id>https://xiaoxinheihei.github.io/2019/03/08/java容器.html</id>
-    <published>2019-03-08T04:21:08.000Z</published>
-    <updated>2019-04-08T13:36:33.843Z</updated>
+    <title>Java 容器</title>
+    <link href="https://xiaoxinheihei.github.io/2019/03/09/java%E5%AE%B9%E5%99%A8.html"/>
+    <id>https://xiaoxinheihei.github.io/2019/03/09/java容器.html</id>
+    <published>2019-03-09T04:21:08.000Z</published>
+    <updated>2019-04-09T13:27:33.363Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="java容器"><a href="#java容器" class="headerlink" title="java容器"></a>java容器</h1><hr><h2 id="一、概览"><a href="#一、概览" class="headerlink" title="一、概览"></a><strong>一、概览</strong></h2><p>容器主要包括 Collection 和 Map 两种，Collection 存储着对象的集合，而 Map 存储着键值对（两个对象）的映射表。</p><hr><h2 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h2><hr><p><img src="https://camo.githubusercontent.com/3f3231c541db80d07928de9e146f1a303d486023/68747470733a2f2f67697465652e636f6d2f437943323031382f43532d4e6f7465732f7261772f6d61737465722f646f63732f706963732f365f323030313535303437363039363033352e706e67" alt="collection"></p><h3 id="1-Set"><a href="#1-Set" class="headerlink" title="1. Set"></a>1. Set</h3><ul><li>TreeSet：基于红黑树实现，支持有序性操作，例如根据一个范围查找元素的操作。TreeSet是用来排序的, 可以指定一个顺序, 对象存入之后会按照指定的顺序排列,但是查找效率不如 HashSet，HashSet 查找的时间复杂度为 O(1)，TreeSet 则为 O(logN)。</li><li>HashSet：基于哈希表实现，支持快速查找，但不支持有序性操作。并且失去了元素的插入顺序信息，也就是说使用 Iterator 遍历 HashSet 得到的结果是不确定的。</li><li>LinkedHashSet：具有 HashSet 的查找效率，且内部使用双向链表维护元素的插入顺序。</li></ul><h3 id="2-List"><a href="#2-List" class="headerlink" title="2. List"></a>2. List</h3><ul><li>ArrayList：基于动态数组实现，支持随机访问。</li><li>Vector：和 ArrayList 类似，但它是线程安全的。</li><li>LinkedList：基于双向链表实现，只能顺序访问，但是可以快速地在链表中间插入和删除元素。不仅如此，LinkedList 还可以用作栈、队列和双向队列。</li></ul><h3 id="3-Queue"><a href="#3-Queue" class="headerlink" title="3. Queue"></a>3. Queue</h3><ul><li>LinkedList：可以用它来实现双向队列。</li><li>PriorityQueue：基于堆结构实现，可以用它来实现优先队列。</li></ul><h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><hr><p><img src="https://camo.githubusercontent.com/3f2d85d508dced72fd5484229c681e6e6ca4e9cf/68747470733a2f2f67697465652e636f6d2f437943323031382f43532d4e6f7465732f7261772f6d61737465722f646f63732f706963732f325f323030313535303432363233323431392e706e67" alt="collection"></p><ul><li>TreeMap：基于红黑树实现。</li><li>HashMap：jdk1.8之前基于数组和链表实现，jdk1.8之后基于数组和链表，当链表的长度大于8时采用红黑树。</li><li>HashTable：和 HashMap 类似，但它是线程安全的，使用Synchronized关键字来保证线程安全，这意味着同一时刻多个线程可以同时写入 HashTable 并且不会导致数据不一致。它是遗留类，不应该去使用它。现在可以使用ConcurrentHashMap来支持线程，ConcurrentHashMap在jdk1.7使用分段锁机制来实现并发，核心类为Segment,jdk1.8使用了CAS操作来支持更高的并发度，在 CAS 操作失败时使用内置锁 synchronized。 </li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="JAVA容器"><a href="#JAVA容器" class="headerlink" title="JAVA容器"></a><strong>JAVA容器</strong></h1><hr><h2 id="一、概览"><a href="#一、概览" class="headerlink" title="一、概览"></a><strong>一、概览</strong></h2><p>容器主要包括 Collection 和 Map 两种，Collection 存储着对象的集合，而 Map 存储着键值对（两个对象）的映射表。</p><h2 id="COLLECTION"><a href="#COLLECTION" class="headerlink" title="COLLECTION"></a>COLLECTION</h2><hr><p><img src="https://i.loli.net/2019/04/09/5cac9d9103af1.png" alt="COLLECTION"></p><h3 id="1-SET"><a href="#1-SET" class="headerlink" title="1. SET"></a>1. SET</h3><ul><li>TreeSet：基于红黑树实现，支持有序性操作，例如根据一个范围查找元素的操作。TreeSet是用来排序的, 可以指定一个顺序, 对象存入之后会按照指定的顺序排列,但是查找效率不如 HashSet，HashSet 查找的时间复杂度为 O(1)，TreeSet 则为 O(logN)；</li><li>HashSet：基于哈希表实现，支持快速查找，但不支持有序性操作。并且失去了元素的插入顺序信息，也就是说使用 Iterator 遍历 HashSet 得到的结果是不确定的；</li><li>LinkedHashSet：具有 HashSet 的查找效率，且内部使用双向链表维护元素的插入顺序。</li></ul><h3 id="2-LIST"><a href="#2-LIST" class="headerlink" title="2. LIST"></a>2. LIST</h3><ul><li>ArrayList：基于动态数组实现，支持随机访问；</li><li>Vector：和 ArrayList 类似，但它是线程安全的;</li><li>LinkedList：基于双向链表实现，只能顺序访问，但是可以快速地在链表中间插入和删除元素。不仅如此，LinkedList 还可以用作栈、队列和双向队列。</li></ul><h3 id="3-QUEUUE"><a href="#3-QUEUUE" class="headerlink" title="3. QUEUUE"></a>3. QUEUUE</h3><ul><li>LinkedList：可以用它来实现双向队列；</li><li>PriorityQueue：基于堆结构实现，可以用它来实现优先队列.</li></ul><h2 id="MAP"><a href="#MAP" class="headerlink" title="MAP"></a>MAP</h2><hr><p><img src="https://i.loli.net/2019/04/09/5cac9d503a255.png" alt="map"></p><ul><li>TreeMap：基于红黑树实现;</li><li>HashMap：jdk1.8之前基于数组和链表实现，jdk1.8之后基于数组和链表，当链表的长度大于8时采用红黑树。</li><li>HashTable：和 HashMap 类似，但它是线程安全的，使用Synchronized关键字来保证线程安全，这意味着同一时刻多个线程可以同时写入 HashTable 并且不会导致数据不一致。它是遗留类，不应该去使用它。现在可以使用ConcurrentHashMap来支持线程，ConcurrentHashMap在jdk1.7使用分段锁机制来实现并发，核心类为Segment,jdk1.8使用了CAS操作来支持更高的并发度，在 CAS 操作失败时使用内置锁 synchronized。</li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;java容器&quot;&gt;&lt;a href=&quot;#java容器&quot; class=&quot;headerlink&quot; title=&quot;java容器&quot;&gt;&lt;/a&gt;java容器&lt;/h1&gt;&lt;hr&gt;
-&lt;h2 id=&quot;一、概览&quot;&gt;&lt;a href=&quot;#一、概览&quot; class=&quot;headerlink&quot; tit
+        &lt;h1 id=&quot;JAVA容器&quot;&gt;&lt;a href=&quot;#JAVA容器&quot; class=&quot;headerlink&quot; title=&quot;JAVA容器&quot;&gt;&lt;/a&gt;&lt;strong&gt;JAVA容器&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
+&lt;h2 id=&quot;一、概览&quot;&gt;&lt;a href=&quot;#一、概览&quot; class
       
     
     </summary>
@@ -65,6 +65,36 @@
     
     
       <category term="java" scheme="https://xiaoxinheihei.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java内存区域详解</title>
+    <link href="https://xiaoxinheihei.github.io/2019/03/08/java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E8%AF%A6%E8%A7%A3.html"/>
+    <id>https://xiaoxinheihei.github.io/2019/03/08/java内存区域详解.html</id>
+    <published>2019-03-08T04:21:08.000Z</published>
+    <updated>2019-04-09T13:18:39.451Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Java-内存区域详解"><a href="#Java-内存区域详解" class="headerlink" title="Java 内存区域详解"></a><strong>Java 内存区域详解</strong></h1><hr><h2 id="JVM-运行时的数据区域"><a href="#JVM-运行时的数据区域" class="headerlink" title="JVM 运行时的数据区域"></a>JVM 运行时的数据区域</h2><p><img src="https://i.loli.net/2019/04/09/5cac8ada25120.png" alt="JVM 运行时的数据区域"></p><hr><p>总共也就这么 5 个区（直接内存不属于 JVM 运行时数据区的一部分），除了程序计数器其他的地方都有可能出现 OOM (OutOfMemoryError)，其中像是程序计数器和两个栈（Java 虚拟机栈 &amp; 本地方法栈）都是每个线程要有一个的，所以肯定是线程隔离的。而其他 2 个区就是线程共享的了，也就是说，如果有多个线程要同时访问这两个区的数据，是会出现线程安全问题的。接下来，我们将对这些区域进行详细的介绍。</p><h3 id="1-程序计数器"><a href="#1-程序计数器" class="headerlink" title="1. 程序计数器"></a>1. 程序计数器</h3><ul><li>当前线程所执行的字节码的行号指示器，字节码解释器工作就是通过改变这个计数器的值来确定下一条要执行的字节码指令的位置。</li><li>执行Java方法和native方法的区别<ul><li>执行Java方法时：记录虚拟机正在执行的字节码指令的地址</li><li>执行native方法时：无定义</li></ul></li></ul><h3 id="2-Java虚拟机栈"><a href="#2-Java虚拟机栈" class="headerlink" title="2. Java虚拟机栈"></a>2. Java虚拟机栈</h3><ul><li>Java方法执行的内存模型，每个方法执行的过程，就是它所对应的栈帧在虚拟机栈中入栈和出战的过程；</li><li>服务于Java方法；</li><li>可能抛出的异常：<ul><li>OutOfMemoryError (在虚拟机栈可以动态扩展的情况下，扩展时无法申请到足够的内存)；</li><li>StackOverflowError (当线程请求的栈深度大于虚拟机所允许的深度)</li></ul></li><li>虚拟机参数设置：-Xss. </li></ul><h3 id="3-本地方法栈"><a href="#3-本地方法栈" class="headerlink" title="3. 本地方法栈"></a>3. 本地方法栈</h3><ul><li>服务于native方法；</li><li>抛出的异常和Java虚拟机栈一样。</li></ul><h3 id="4-Java堆"><a href="#4-Java堆" class="headerlink" title="4. Java堆"></a>4. Java堆</h3><ul><li>唯一的目的：存放对象实例；</li><li>垃圾收集器管理的主要区域；</li><li>可以处于物理上不连续的内存空间中；</li><li>可能抛出的异常：<ul><li>OutOfMemoryError（堆中没有内存可以分配给新创建的实例，并且堆也无法再继续扩展了）。</li></ul></li><li>虚拟机参数设置：<ul><li>最大值：-Xmx</li><li>最小值：-Xms</li><li>两个参数设置成相同的值可避免堆自动扩展。</li></ul></li></ul><h3 id="5-方法区"><a href="#5-方法区" class="headerlink" title="5. 方法区"></a>5. 方法区</h3><ul><li>存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据；<ul><li>类信息：即 Class 类，如类名、访问修饰符、常量池、字段描述、方法描述等。</li></ul></li><li>垃圾收集行为在此区域很少发生；<ul><li>不过也不能不清理，对于经常动态生成大量 Class 的应用，如 Spring 等，需要特别注意类的回收状况。</li></ul></li><li>运行时常量池也是方法区的一部分；<ul><li>Class 文件中除了有类的版本、字段、方法、接口等描述信息外，还有一项是常量池，用于存放编译器生成的各种字面量（就是代码中定义的 static final 常量）和符号引用，这部分信息就存储在运行时常量池中。</li></ul></li><li>可能抛出的异常：<ul><li>OutOfMemoryError（方法区无法满足内存分配需求时）。</li></ul></li></ul><h3 id="6-直接内存"><a href="#6-直接内存" class="headerlink" title="6. 直接内存"></a>6. 直接内存</h3><ul><li>JDK 1.4 的 NIO 类可以使用 native 函数库直接分配堆外内存，这是一种基于通道与缓冲区的 I/O 方式，它在 Java 堆中存储一个 DirectByteBuffer 对象作为堆外内存的引用，这样就可以对堆外内存进行操作了。因为可以避免 Java 堆和 Native 堆之间来回复制数据，在一些场景可以带来显著的性能提高。</li><li>虚拟机参数设置：-XX:MaxDirectMemorySize<ul><li>默认等于 Java 堆最大值，即 -Xmx 指定的值。</li></ul></li><li>将直接内存放在这里讲解的原因是它也可能会出现 OutOfMemoryError；<ul><li>服务器管理员在配置 JVM 参数时，会根据机器的实际内存设置 -Xmx 等信息，但经常会忽略直接内存（默认等于 -Xmx 设置值），这可能会使得各个内存区域的总和大于物理内存限制，从而导致动态扩展时出现 OOM。</li></ul></li></ul><h2 id="HotSpot-虚拟机堆中的对象"><a href="#HotSpot-虚拟机堆中的对象" class="headerlink" title="HotSpot 虚拟机堆中的对象"></a>HotSpot 虚拟机堆中的对象</h2><hr><p>这一小节对JVM对Java堆中的对象的创建、布局和访问的全过程详解。</p><h3 id="对象的创建（遇到一条new指令时）"><a href="#对象的创建（遇到一条new指令时）" class="headerlink" title="对象的创建（遇到一条new指令时）"></a>对象的创建（遇到一条new指令时）</h3><p><img src="https://i.loli.net/2019/04/09/5cac9255d876b.png" alt="对象的创建"></p><hr><p>1.检查这个指令的参数能否在常量池中定位到一个类的符号引用，并检查这个符号引用代表的类是否已被加载、解析和初始化过。如果没有，先把这个类加载进内存；<br>2.类加载检查通过后，虚拟机将为新对象分配内存，此时已经可以确定存储这个对象所需的内存大小；<br>3.在堆中为新对象分配可用内存；<br>4.将分配到的内存初始化；<br>5.设置对象头中的数据；<br>6.此时，从虚拟机的角度看，对象已经创建好了，但从Java程序的角度看，对象创建才刚刚开始，构造函数还没有执行；<br>7.执行构造函数。<br>第 3 步，在堆中为新对象分配可用内存时，会涉及到以下两个问题：</p><p><strong>如何在堆中为新对象划分可用的内存？</strong></p><ul><li>指针碰撞（内存分配规整）<ul><li>用过的内存放一边，没用过的内存放一边，中间用一个指针分隔；</li><li>分配内存的过程就是将指针向没用过的内存那边移动所需的长度；</li></ul></li><li>空闲列表（内存分配不规整）<ul><li>维护一个列表，记录哪些内存块是可用的；</li></ul></li><li>分配内存时，从列表上选取一块足够大的空间分给对象，并更新列表上的记录；</li></ul><p><strong>如何处理多线程创建对象时，划分内存的指针的同步问题？</strong></p><ul><li>对分配内存空间的动作进行同步处理（CAS）；</li><li>把内存分配动作按照线程划分在不同的空间之中进行；<ul><li>每个线程在 Java 堆中预先分配一小块内存，称为本地线程分配缓冲（Thread Local Allocation Buffer，TLAB）；</li><li>哪个线程要分配内存就在哪个线程的 TLAB 上分配，TLAB 用完需要分配新的 TLAB 时，才需要同步锁定；</li><li>通过 -XX:+/-UseTLAB 参数设定是否使用 TLAB。</li></ul></li></ul><h3 id="对象的内存布局"><a href="#对象的内存布局" class="headerlink" title="对象的内存布局"></a>对象的内存布局</h3><ul><li>对象头：<ul><li>第一部分：存储对象自身运行时的数据，HashCode、GC分代年龄等（Mark Word）、锁状态标志、、偏向线程ID；</li><li>第二部分：类型指针，指向它的类元数据的指针，虚拟机通过这个指针来判断这个对象是哪个类的实例（HotSpot 采用的是直接指针的方式访问对象的），当然类型指针并不一定都在虚拟机中，当有的虚拟机使用句柄来进行对象访问时，此时指针在句柄池中；</li><li>如果是个数组对象，对象头中还有一块用于记录数组长度的数据。</li></ul></li><li>实例数据： <ul><li>默认分配顺序：longs/doubles、ints、shorts/chars、bytes/booleans、oops (Ordinary Object Pointers)，相同宽度的字段会被分配在一起，除了 oops，其他的长度由长到短；</li><li>默认分配顺序下，父类字段会被分配在子类字段前面。</li></ul></li></ul><p>注：HotSpot VM要求对象的起始地址必须是8字节的整数倍，所以不够要补齐。</p><h3 id="对象访问"><a href="#对象访问" class="headerlink" title="对象访问"></a>对象访问</h3><p>Java 程序需要通过虚拟机栈上的 reference 数据来操作堆上的具体对象，reference 数据是一个指向对象的引用，不过如何通过这个引用定位到具体的对象，目前主要有以下两种访问方式：句柄访问和直接指针访问。</p><h4 id="句柄访问"><a href="#句柄访问" class="headerlink" title="句柄访问"></a>句柄访问</h4><p>句柄访问会在 Java 堆中划分一块内存作为句柄池，每一个句柄存放着到对象实例数据和对象类型数据的指针。</p><p>优势：对象移动的时候（这在垃圾回收时十分常见）只需改变句柄池中对象实例数据的指针，不需要修改reference本身。</p><p><img src="https://i.loli.net/2019/04/09/5cac96df545e5.png" alt="句柄访问"></p><h4 id="直接指针访问"><a href="#直接指针访问" class="headerlink" title="直接指针访问"></a>直接指针访问</h4><p>直接指针访问方式在 Java 堆对象的实例数据中存放了一个指向对象类型数据的指针，在 HotSpot 中，这个指针会被存放在对象头中。</p><p>优势：减少了一次指针定位对象实例数据的开销，速度更快。</p><p><img src="https://i.loli.net/2019/04/09/5cac98512434b.png" alt="直接访问"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Java-内存区域详解&quot;&gt;&lt;a href=&quot;#Java-内存区域详解&quot; class=&quot;headerlink&quot; title=&quot;Java 内存区域详解&quot;&gt;&lt;/a&gt;&lt;strong&gt;Java 内存区域详解&lt;/strong&gt;&lt;/h1&gt;&lt;hr&gt;
+&lt;h2 id=&quot;JVM-运行时
+      
+    
+    </summary>
+    
+      <category term="java" scheme="https://xiaoxinheihei.github.io/categories/java/"/>
+    
+      <category term="JVM" scheme="https://xiaoxinheihei.github.io/categories/java/JVM/"/>
+    
+    
+      <category term="java" scheme="https://xiaoxinheihei.github.io/tags/java/"/>
+    
+      <category term="JVM" scheme="https://xiaoxinheihei.github.io/tags/JVM/"/>
     
   </entry>
   
